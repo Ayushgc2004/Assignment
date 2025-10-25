@@ -1,0 +1,9 @@
+SQL Scripts for Preparing any 4 different type of charts which will make more sense for dashboard:
+
+SELECT (SUM(orders_missed_sla) * 100.0) / SUM(total_delivered_orders) FROM analytics_delivery_performance;
+
+SELECT customer_state AS "Region", SUM(total_spent) AS "Total Revenue" FROM analytics_sales_summary GROUP BY 1 ORDER BY 2 DESC;
+
+SELECT purchase_date AS "time", AVG(avg_delivery_days) AS "Avg Delivery Time (Days)" FROM analytics_delivery_performance GROUP BY 1 ORDER BY 1;
+
+SELECT customer_unique_id, total_spent FROM analytics_sales_summary ORDER BY total_spent DESC LIMIT 10;
